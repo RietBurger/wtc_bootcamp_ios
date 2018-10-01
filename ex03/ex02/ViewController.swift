@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ex02
+//  ex03
 //
 //  Created by Jeanette Henriette BURGER on 2018/10/01.
 //  Copyright © 2018 Jeanette Henriette BURGER. All rights reserved.

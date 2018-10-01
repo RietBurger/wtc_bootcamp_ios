@@ -12,17 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel: UILabel!
     
-    var symbol = ""
-    var input = ""
-    var negFlag = ""
-    var result = 0
-    var answer = false
-    var eqFlag = false
-    
     @IBAction func one(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "1"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "1"
@@ -31,9 +23,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func two(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "2"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "2"
@@ -42,9 +33,8 @@ class ViewController: UIViewController {
     }
    
     @IBAction func three(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "3"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "3"
@@ -53,9 +43,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func four(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "4"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "4"
@@ -64,9 +53,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func five(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "5"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "5"
@@ -75,9 +63,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func six(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " "){
             displayLabel.text = "6"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "6"
@@ -86,9 +73,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func seven(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "7"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "7"
@@ -97,9 +83,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func eight(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " " ) {
             displayLabel.text = "8"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "8"
@@ -108,9 +93,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func nine(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "9"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "9"
@@ -119,9 +103,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func zero(_ sender: UIButton) {
-        if ((displayLabel.text == " " || answer) && symbol != "") {
+        if (displayLabel.text == " ") {
             displayLabel.text = "0"
-            answer = false
         }
         else {
             displayLabel.text = displayLabel.text! + "0"
@@ -135,114 +118,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func negValue(_ sender: UIButton) {
-        if (displayLabel.text!.contains("-"))
-        {
-            negFlag = "-"
-        }
-        if (negFlag != "-")
-        {
-            input = "-" + displayLabel.text!
-            displayLabel.text = input
-            input = ""
-            negFlag = ""
-        }
-        print(input)
         print("pressed button: neg");
     }
 
     @IBAction func add(_ sender: UIButton) {
-        input = displayLabel.text!
-        displayLabel.text = " "
-        symbol = "+";
-        answer = false
         print("pressed button: plus");
     }
 
     @IBAction func multiply(_ sender: UIButton) {
-        input = displayLabel.text!
-        displayLabel.text! = " "
-        symbol = "*"
-        answer = false
         print("pressed button: multiply");
     }
 
     @IBAction func minus(_ sender: UIButton) {
-        input = displayLabel.text!
-        displayLabel.text = " "
-        symbol = "-"
-        answer = false
         print("pressed button: minus");
     }
 
     @IBAction func devide(_ sender: UIButton) {
-        input = displayLabel.text!
-        displayLabel.text = " "
-        symbol = "/"
-        answer = false
         print("pressed button: divide");
     }
 
-    @IBOutlet weak var errorLabel: UILabel!
-    
-    func displayError()
-    {
-        errorLabel.text = "ERROR"
-    }
-    
     @IBAction func equal(_ sender: UIButton) {
-        var nr1 = 0;
-        var nr2 = 0;
-        
-        if (errorLabel.text == "ERROR")
-        {
-            errorLabel.text = ""
-        }
-//        if (eqFlag)
-//        {
-//            nr1 = nr2
-//        }
-//        else
-//        {
-            nr1 = (input as NSString).integerValue
-//        }
-        nr2 = (displayLabel.text! as NSString).integerValue
-        print("this is input")
-        print(input)
-        if (symbol == "+")
-        {
-            result = nr1 + nr2;
-            displayLabel.text = String(result)
-//            symbol = ""
-            answer = true
-//            nr2 = nr1
-        }
-        else if (symbol == "/")
-        {
-            if (nr2 == 0)
-            {
-                displayError();
-            }
-            else {
-                result = nr1 / nr2;
-                displayLabel.text = String(result)
-//                symbol = ""
-                answer = true
-            }
-        }
-        else if (symbol == "-")
-        {
-            result = nr1 - nr2;
-            displayLabel.text = String(result)
-//            symbol = ""
-            answer = true
-        }
-        else if (symbol == "*")
-        {
-            result = nr1 * nr2;
-            displayLabel.text = String(result)
-//            symbol = ""
-            answer = true
-        }
         
         print("pressed button: equal");
     }

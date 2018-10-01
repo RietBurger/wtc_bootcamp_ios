@@ -162,13 +162,6 @@
                                     <action selector="negValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9nA-rE-WfC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfT-fN-zNx">
-                                <rect key="frame" x="166" y="390" width="116" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72146253380000003" blue="0.99100867599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -231,7 +224,6 @@
                     </view>
                     <connections>
                         <outlet property="displayLabel" destination="tFN-2n-jUu" id="uIU-Or-xsz"/>
-                        <outlet property="errorLabel" destination="xfT-fN-zNx" id="EUc-0m-Gh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
