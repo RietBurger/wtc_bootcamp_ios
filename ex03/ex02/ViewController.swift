@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var result = 0
     var answer = false
     var eqFlag = false
+    var nr1 = 0;
+    var nr2 = 0;
     
     @IBAction func one(_ sender: UIButton) {
         if ((displayLabel.text == " " || answer) && symbol != "") {
@@ -190,22 +192,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equal(_ sender: UIButton) {
-        var nr1 = 0;
-        var nr2 = 0;
+        
         
         if (errorLabel.text == "ERROR")
         {
             errorLabel.text = ""
         }
-//        if (eqFlag)
-//        {
-//            nr1 = nr2
-//        }
-//        else
-//        {
+        if (!eqFlag)
+        {
+            nr2 = (displayLabel.text! as NSString).integerValue
+        }
+        else
+        {
             nr1 = (input as NSString).integerValue
-//        }
-        nr2 = (displayLabel.text! as NSString).integerValue
+            nr2 = (displayLabel.text! as NSString).integerValue
+        }
         print("this is input")
         print(input)
         if (symbol == "+")
@@ -214,7 +215,7 @@ class ViewController: UIViewController {
             displayLabel.text = String(result)
 //            symbol = ""
             answer = true
-//            nr2 = nr1
+            nr2 = nr1
         }
         else if (symbol == "/")
         {
@@ -243,7 +244,8 @@ class ViewController: UIViewController {
 //            symbol = ""
             answer = true
         }
-        
+        nr1 = nr2
+        eqFlag = true
         print("pressed button: equal");
     }
     
