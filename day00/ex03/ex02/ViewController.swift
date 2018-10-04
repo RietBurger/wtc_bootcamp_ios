@@ -17,9 +17,17 @@ class ViewController: UIViewController {
     var negFlag = ""
     var result = 0
     var answer = false
-    var eqFlag = false
     var nr1 = 0;
     var nr2 = 0;
+    
+    func cleart()
+    {
+        symbol = ""
+        input = ""
+        negFlag = ""
+        result = 0
+        answer = false
+    }
     
     @IBAction func one(_ sender: UIButton) {
         if ((displayLabel.text == " " || answer) && symbol != "") {
@@ -133,6 +141,7 @@ class ViewController: UIViewController {
 
     @IBAction func clear(_ sender: UIButton) {
         displayLabel.text = " "
+        cleart()
         print("pressed button: ac");
     }
 
@@ -193,29 +202,18 @@ class ViewController: UIViewController {
     
     @IBAction func equal(_ sender: UIButton) {
         
-        
         if (errorLabel.text == "ERROR")
         {
             errorLabel.text = ""
         }
-        if (!eqFlag)
-        {
-            nr2 = (displayLabel.text! as NSString).integerValue
-        }
-        else
-        {
-            nr1 = (input as NSString).integerValue
-            nr2 = (displayLabel.text! as NSString).integerValue
-        }
-        print("this is input")
-        print(input)
+        nr1 = (input as NSString).integerValue
+        nr2 = (displayLabel.text! as NSString).integerValue
+        
         if (symbol == "+")
         {
             result = nr1 + nr2;
             displayLabel.text = String(result)
-//            symbol = ""
             answer = true
-            nr2 = nr1
         }
         else if (symbol == "/")
         {
@@ -226,7 +224,6 @@ class ViewController: UIViewController {
             else {
                 result = nr1 / nr2;
                 displayLabel.text = String(result)
-//                symbol = ""
                 answer = true
             }
         }
@@ -234,18 +231,14 @@ class ViewController: UIViewController {
         {
             result = nr1 - nr2;
             displayLabel.text = String(result)
-//            symbol = ""
             answer = true
         }
         else if (symbol == "*")
         {
             result = nr1 * nr2;
             displayLabel.text = String(result)
-//            symbol = ""
             answer = true
         }
-        nr1 = nr2
-        eqFlag = true
         print("pressed button: equal");
     }
     
