@@ -11,14 +11,15 @@ import UIKit
 class ViewControllerNew: UIViewController {
 
     @IBOutlet weak var PersName: UITextField!
-    @IBOutlet weak var DateSelected: UIDatePicker!
+//    @IBOutlet weak var DateSelected: UIDatePicker!
     @IBOutlet weak var Description: UITextView!
     
+    @IBOutlet weak var Dated: UIDatePicker!
     
     @IBAction func DoneSave(_ sender: UIBarButtonItem) {
-        if DateSelected.date >= Date() {
+        if Dated.date >= Date() {
             print(PersName.text!)
-            print(DateSelected.date)
+            print(Dated.date)
             print(Description.text!)
             print("");
         } else {
