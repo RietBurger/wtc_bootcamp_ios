@@ -7,19 +7,34 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class FirstViewController: UIViewController {
-
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var locationsList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
-    }
+        
+}
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.placeslist.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        
+        let(list) = locations.placeslist[indexPath.row]
+        
+        cell.textLabel?.text = list
+        return cell
+    }
 //    cell.titleText?.text = "lat and long 84 Albertina Sisulu str"
     
     override func didReceiveMemoryWarning() {

@@ -35,17 +35,24 @@
                                 <rect key="frame" x="-0.5" y="-14.5" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="VVY-vW-hbh" style="IBUITableViewCellStyleDefault" id="uRD-gg-RAo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="nMP-o0-wps" detailTextLabel="Vtq-Ju-oxW" style="IBUITableViewCellStyleSubtitle" id="uRD-gg-RAo">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRD-gg-RAo" id="sZw-FB-NNZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VVY-vW-hbh">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nMP-o0-wps">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vtq-Ju-oxW">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -54,6 +61,10 @@
                                         <accessibility key="accessibilityConfiguration" identifier="cell"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="p64-cz-9nH"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="wur-xf-ogW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,12 +110,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-qg-1PN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-qg-1PN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
                                 <connections>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="DuC-Tx-feb"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VCg-F5-wQv">
+                                <rect key="frame" x="72" y="580" width="230" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setSegment:" destination="8rJ-Kc-sve" eventType="valueChanged" id="0uD-B3-tth"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -113,6 +135,8 @@
                             <constraint firstItem="mx0-qg-1PN" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="LTP-es-BYT"/>
                             <constraint firstItem="mx0-qg-1PN" firstAttribute="centerX" secondItem="NDk-cv-Gan" secondAttribute="centerX" id="Qpo-Kt-F0P"/>
                             <constraint firstItem="mx0-qg-1PN" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="R0n-9G-eFz"/>
+                            <constraint firstItem="VCg-F5-wQv" firstAttribute="centerX" secondItem="mx0-qg-1PN" secondAttribute="centerX" id="ehO-DG-dhx"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="VCg-F5-wQv" secondAttribute="bottom" constant="10" id="ikV-gK-iEc"/>
                             <constraint firstItem="mx0-qg-1PN" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="pbZ-XT-LCR"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
@@ -122,6 +146,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="icons8-google-maps-64" landscapeImage="icons8-google-maps-64" largeContentSizeImage="icons8-google-maps-64" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mapView" destination="mx0-qg-1PN" id="kkS-wV-hZQ"/>
+                        <outlet property="segments" destination="VCg-F5-wQv" id="IuH-6F-kcY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
