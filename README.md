@@ -26,3 +26,10 @@ Day01:</br>
 
 Day02:</br>
   Create a 'Death Note' app</br>
+  
+Rush00:</br>
+  Link to 42API and access topics with messages.
+  
+Day05:</br>
+  Use gestures, animation and behaviours on objects.
+  Create an app that generates randomly colored rectangles or squares on click. Use pinch, rotate and pan on any of these objects.
