@@ -28,8 +28,15 @@ Day02:</br>
   Create a 'Death Note' app</br>
   
 Rush00:</br>
-  Link to 42API and access topics with messages.
+  Link to 42API and access topics with messages.</br>
   
 Day05:</br>
-  Use gestures, animation and behaviours on objects.
-  Create an app that generates randomly colored rectangles or squares on click. Use pinch, rotate and pan on any of these objects.
+  Create a basic maps app Using mapkit.</br>
+
+Day06:</br>
+  Use gestures, animation and behaviours on objects.</br>
+  Create an app that generates randomly colored rectangles or squares on click. Use pinch, rotate and pan on any of these objects.</br>
+  
+Day07: </br>
+  Create a weather chatbot using Cocoapods.</br>
+  
