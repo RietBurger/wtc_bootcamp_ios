@@ -43,3 +43,5 @@ Day07: </br>
 Day08: </br>
   Create our own cocoa pod and start using coreData. </br>
   
+Rush01: </br>
+  Create a navigation app. MapKits and Cocoapods allowed. </br>
