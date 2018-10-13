@@ -40,3 +40,6 @@ Day06:</br>
 Day07: </br>
   Create a weather chatbot using Cocoapods.</br>
   
+Day08: </br>
+  Create our own cocoa pod and start using coreData. </br>
+  
