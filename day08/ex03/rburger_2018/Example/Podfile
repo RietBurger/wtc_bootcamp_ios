@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'rburger_2018_Example' do
+  pod 'rburger_2018', :path => '../'
+
+  target 'rburger_2018_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,6 @@
+framework module rburger_2018 {
+  umbrella header "rburger_2018-umbrella.h"
+
+  export *
+  module * { export * }
+}
